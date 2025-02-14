@@ -1,0 +1,47 @@
+{
+  "name": "bamsev1",
+  "version": "1.0.0",
+  "description": "Electron bams ev1 application",
+  "main": "main.js",
+  "scripts": {
+    "start": "npx electron .",
+    "dev": "nodemon --exec electron . --watch main.js",
+    "deploy": "electron-builder --windows nsis:ia32"
+  },
+  "devDependencies": {
+    "electron": "^34.1.1",
+    "axios": "^1.7.9",
+    "electron-builder": "^25.1.8"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "build": {
+    "productName": "Bamsev1",
+    "appId": "com.electron.bamsev1",
+    "asar": true,
+    "files": [
+      "dist/**/*",
+      "main.js",
+      "preload.js",
+      "package.json"
+    ],
+    "extraMetadata": {
+      "main": "main.js"
+    },
+    "win": {
+      "target": "nsis",
+      "signingHashAlgorithms": [
+        "sha256"
+      ],
+      "publisherName": "mulinet",
+      "verifyUpdateCodeSignature": true
+    },
+    "nsis": {
+      "oneClick": false,
+      "perMachine": true,
+      "allowElevation": true,
+      "allowToChangeInstallationDirectory": true
+    }
+  }
+}

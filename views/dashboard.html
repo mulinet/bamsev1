@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>대시보드 - Kakao 스타일</title>
+    <link rel="stylesheet" href="../css/dashboard.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <div id="header-placeholder"></div>
+        <div class="content">
+            <div class="frame">
+                <h3 onclick="location.href='approval.html'">결재해야 할 문서 (3)</h3>
+                <ul>
+                    <li>지출결의서 - boh application Renew</li>
+                    <li>월간보고서 - Successfactors Monthly report</li>
+                    <li>Leave Approval (pending)</li>
+                </ul>
+            </div>
+            <div class="frame">
+                <h3 onclick="location.href='systemlog.html'">시스템 로그 알림 (5)</h3>
+                <ul>
+                    <li>BAMS daily batch job log</li>
+                    <li>D365 System log</li>
+                    <li>e-Accounting Error log</li>
+                    <li>GHR Notification</li>
+                    <li>Employee Daily notice</li>
+                </ul>
+            </div>
+            <div class="frame">
+                <h3>해야 할 일</h3>
+                <ul>
+                    <li>✔️ 보고서 작성</li>
+                    <li>✔️ 미팅 준비</li>
+                    <li>✔️ 이메일 확인</li>
+                </ul>
+            </div>
+            <div class="frame">
+                <h3>알림 메시지</h3>
+                <p>새로운 메시지가 도착했습니다.</p>
+            </div>
+        </div>
+    </div>
+    <script src="../renderer/includeHeader.js"></script>
+    <script src="../renderer/dashboard.js"></script>
+    <script src="../renderer/common.js"></script>
+</body>
+</html>

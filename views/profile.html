@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>사용자 프로필 - Kakao 스타일</title>
+    <link rel="stylesheet" href="../css/profile.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <div id="header-placeholder"></div>
+        <div class="content">
+            <div class="profile-container">
+                <h2>사용자 프로필</h2>
+                <div class="profile-image">
+                    <img src="../assets/image/trump-avatar.jpg" alt="User Avatar">
+                    <button class="change-image">이미지 변경</button>
+                </div>
+                <div class="profile-info">
+                    <label for="name">성명:</label>
+                    <input type="text" id="name" value="도널드 트럼프">
+                    <label for="email">이메일:</label>
+                    <input type="email" id="email" value="donald.trump@example.com">
+                    <button class="change-password">비밀번호 변경</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../renderer/includeHeader.js"></script>
+    <script src="../renderer/common.js"></script>
+</body>
+</html>

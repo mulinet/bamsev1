@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>시스템 로그 - Kakao 스타일</title>
+    <link rel="stylesheet" href="../css/systemlog.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <div id="header-placeholder"></div>
+        <div class="content">
+            <div class="container">
+                <h1>최근 2주 시스템 로그 상태</h1>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>로그 유형</th>
+                            <th>02.07</th>
+                            <th>02.08</th>
+                            <th>02.09</th>
+                            <th>02.10</th>
+                            <th>02.11</th>
+                            <th>02.12</th>
+                            <th>02.13 (오늘)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>서버 응답 시간</td>
+                            <td class="status-green">정상</td>
+                            <td class="status-green">정상</td>
+                            <td class="status-yellow">주의</td>
+                            <td class="status-green">정상</td>
+                            <td class="status-green">정상</td>
+                            <td class="status-red">오류</td>
+                            <td class="status-green">정상</td>
+                        </tr>
+                        <tr>
+                            <td>데이터베이스 상태</td>
+                            <td class="status-green">정상</td>
+                            <td class="status-green">정상</td>
+                            <td class="status-green">정상</td>
+                            <td class="status-yellow">주의</td>
+                            <td class="status-green">정상</td>
+                            <td class="status-green">정상</td>
+                            <td class="status-green">정상</td>
+                        </tr>
+                        <tr>
+                            <td>API 응답 상태</td>
+                            <td class="status-green">정상</td>
+                            <td class="status-green">정상</td>
+                            <td class="status-green">정상</td>
+                            <td class="status-green">정상</td>
+                            <td class="status-yellow">주의</td>
+                            <td class="status-green">정상</td>
+                            <td class="status-red">오류</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <script src="../renderer/includeHeader.js"></script>
+    <script src="../renderer/common.js"></script>
+</body>
+</html>

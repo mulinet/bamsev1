@@ -2,6 +2,8 @@ const { app, BrowserWindow, ipcMain } = require("electron");
 const path = require("path");
 const axios = require("axios");
 
+process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
+
 let mainWindow;
 
 app.whenReady().then(() => {
@@ -19,19 +21,21 @@ app.whenReady().then(() => {
 }); 
 
 ipcMain.handle("login", async (event, credentials) => {
-    try {
-        const response = await axios.post("https://7def6f73-9aec-48eb-9d1a-8507e08111c1.mock.pstmn.io/auth", credentials);
-        const data = response.data;
+    const reqCententType = {'Content-Type': 'application/json'};
 
-        console.log(data);
-        console.log(data.email);
-        console.log(data[0]);
-        console.log(data.firstlogin);
-        console.log(data.accessToken);
+    try {
+        const response = await axios.post("https://bamsqa.jejudreamtower.com/user/signin", credentials, {reqCententType});
+        const data = response.data;
 
         if (data.accessToken) {
             // 렌더러 프로세스의 sessionStorage에 토큰 저장
             mainWindow.webContents.executeJavaScript(`sessionStorage.setItem('token', '${data.accessToken}');`);
+
+            mainWindow.webContents.executeJavaScript(`localStorage.setItem('id', '${data.id}');`);
+            mainWindow.webContents.executeJavaScript(`localStorage.setItem('username', '${data.username}');`); 
+
+
+
             return { success: true, token: data.accessToken };
         } else {
             return { success: false, message: "로그인 실패!" };
